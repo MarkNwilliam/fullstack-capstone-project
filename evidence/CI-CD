@@ -1,0 +1,69 @@
+$ gh run view 36904372142 --repo MarkNwilliam/fullstack-capstone-project
+
+
+✓ main CI/CD Pipeline · 36904372142
+Triggered via push about 4 minutes ago
+
+JOBS
+✓ Lint and syntax check the backend in 17s (ID 110511100660)
+✓ Build the React frontend in 51s (ID 110511100957)
+✓ Build the Docker images in 1m51s (ID 110511473170)
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Lint and syntax check the backend: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+Lint and syntax check the backend: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Build the React frontend: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+Build the React frontend: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, docker/build-push-action@v6, docker/setup-buildx-action@v3. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Build the Docker images: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+Build the Docker images: .github#1
+
+
+ARTIFACTS
+MarkNwilliam~fullstack-capstone-project~LJCPFF.dockerbuild
+MarkNwilliam~fullstack-capstone-project~2VCSCZ.dockerbuild
+giftlink-frontend-build
+
+For more information about a job, try: gh run view --job=<job-id>
+View this run on GitHub: https://github.com/MarkNwilliam/fullstack-capstone-project/actions/runs/36904372142
+
+$ gh run view 36904372142 --json jobs
+
+JOB: Lint and syntax check the backend [success]  ✓ Set up job [success]
+  ✓ Check out the repository [success]
+  ✓ Set up Node.js 20 [success]
+  ✓ Install backend dependencies [success]
+  ✓ Syntax check the backend JavaScript [success]
+  ✓ Lint the sentiment service [success]
+  ✓ Post Set up Node.js 20 [success]
+  ✓ Post Check out the repository [success]
+  ✓ Complete job [success]
+JOB: Build the React frontend [success]  ✓ Set up job [success]
+  ✓ Check out the repository [success]
+  ✓ Set up Node.js 20 [success]
+  ✓ Install frontend dependencies [success]
+  ✓ Build the production bundle [success]
+  ✓ Upload the production build as an artifact [success]
+  ✓ Post Set up Node.js 20 [success]
+  ✓ Post Check out the repository [success]
+  ✓ Complete job [success]
+JOB: Build the Docker images [success]  ✓ Set up job [success]
+  ✓ Check out the repository [success]
+  ✓ Set up Docker Buildx [success]
+  ✓ Build the backend image [success]
+  ✓ Build the frontend image [success]
+  ✓ Post Build the frontend image [success]
+  ✓ Post Build the backend image [success]
+  ✓ Post Set up Docker Buildx [success]
+  ✓ Post Check out the repository [success]
+  ✓ Complete job [success]
