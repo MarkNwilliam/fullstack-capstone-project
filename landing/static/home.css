@@ -1,0 +1,62 @@
+/* Task 1: Style the body */
+body {
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: #f8f9fa;
+}
+
+/* Task 2: Create a pseudo-element for the background and blur */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: url('background-gifts.jpg') no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(4px);
+}
+
+/* Task 3: Style the content area */
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+/* Task 4: Add styles for headings, paragraphs, and buttons */
+h1, h2, .lead, .btn-primary {
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.75);
+}
+
+h1.giftlink-title {
+    font-weight: 700;
+    font-size: 4rem;
+    margin-top: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+h2.giftlink-subtitle {
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.lead.giftlink-quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 2.5rem;
+}
+
+.btn-primary.get-started {
+    padding: 0.85rem 2.5rem;
+    font-size: 1.15rem;
+    border-radius: 30px;
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-primary.get-started:hover {
+    background-color: #1e7e34;
+}
