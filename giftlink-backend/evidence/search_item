@@ -1,0 +1,16 @@
+$ curl -s "http://localhost:3060/api/search?category=Kitchen"
+[
+  {
+    "id": "875",
+    "name": "Lamp",
+    "category": "Kitchen",
+    "condition": "New"
+  },
+  {
+    "id": "424",
+    "name": "Dining Table",
+    "category": "Kitchen",
+    "condition": "New"
+  }
+]
+Matches found: 2

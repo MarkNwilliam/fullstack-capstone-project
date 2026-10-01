@@ -1,0 +1,6 @@
+$ curl -X POST -H "Content-Type: application/json" -d '{"username":"giftlinkuser","password":"Passw0rd!","email":"giftlink@example.com","first_name":"Gift","last_name":"Link"}' http://localhost:3060/api/auth/register
+{
+  "success": true,
+  "id": "688346c2-6c99-41ef-9bca-cf4452c1fccb",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX..."
+}

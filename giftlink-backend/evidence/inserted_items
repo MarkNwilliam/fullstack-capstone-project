@@ -1,0 +1,6 @@
+$ node util/import-mongo/index.js
+  Connected successfully to server
+  Inserted documents: 16
+
+$ mongosh "mongodb://127.0.0.1:27017/giftdb" --eval "db.gifts.countDocuments()"
+  Documents imported into gifts: 16

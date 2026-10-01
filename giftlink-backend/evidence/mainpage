@@ -1,0 +1,100 @@
+$ curl -s http://localhost:3060/api/gifts
+[
+  {
+    "id": "875",
+    "name": "Lamp",
+    "category": "Kitchen",
+    "condition": "New"
+  },
+  {
+    "id": "396",
+    "name": "Curtain",
+    "category": "Office",
+    "condition": "Older"
+  },
+  {
+    "id": "812",
+    "name": "Bookshelf",
+    "category": "Office",
+    "condition": "Like New"
+  },
+  {
+    "id": "386",
+    "name": "Curtain",
+    "category": "Living",
+    "condition": "Older"
+  },
+  {
+    "id": "419",
+    "name": "Bookshelf",
+    "category": "Bedroom",
+    "condition": "Older"
+  },
+  {
+    "id": "420",
+    "name": "Bookshelf",
+    "category": "Bedroom",
+    "condition": "Older"
+  },
+  {
+    "id": "421",
+    "name": "Desk Chair",
+    "category": "Office Furniture",
+    "condition": "Like New"
+  },
+  {
+    "id": "422",
+    "name": "Coffee Table",
+    "category": "Living Room",
+    "condition": "Older"
+  },
+  {
+    "id": "423",
+    "name": "Laptop Stand",
+    "category": "Office",
+    "condition": "Like New"
+  },
+  {
+    "id": "424",
+    "name": "Dining Table",
+    "category": "Kitchen",
+    "condition": "New"
+  },
+  {
+    "id": "425",
+    "name": "Couch",
+    "category": "Living Room",
+    "condition": "Older"
+  },
+  {
+    "id": "426",
+    "name": "Office Desk",
+    "category": "Office",
+    "condition": "Older"
+  },
+  {
+    "id": "427",
+    "name": "TV Stand",
+    "category": "Living Room",
+    "condition": "Older"
+  },
+  {
+    "id": "428",
+    "name": "Bed Frame",
+    "category": "Bedroom",
+    "condition": "Older"
+  },
+  {
+    "id": "429",
+    "name": "Side Table",
+    "category": "Living Room",
+    "condition": "Older"
+  },
+  {
+    "id": "430",
+    "name": "Filing Cabinet",
+    "category": "Office",
+    "condition": "Older"
+  }
+]
+Total items listed: 16

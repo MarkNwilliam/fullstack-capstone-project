@@ -130,3 +130,11 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Local environment variables and secrets
+.env
+.env.*
+!.env.sample
+
+# Local MongoDB data and evidence output
+*.log
