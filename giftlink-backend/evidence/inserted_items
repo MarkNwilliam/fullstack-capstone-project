@@ -1,6 +1,13 @@
-$ node util/import-mongo/index.js
-  Connected successfully to server
-  Inserted documents: 16
+$ pwd
+/tmp/opencode/giftlink/giftlink-backend/util/import-mongo
 
-$ mongosh "mongodb://127.0.0.1:27017/giftdb" --eval "db.gifts.countDocuments()"
-  Documents imported into gifts: 16
+$ MONGO_URL=mongodb://127.0.0.1:27017/giftdb npm start
+
+> import-mongo@1.0.0 start
+> node index.js
+
+Connected successfully to server
+Inserted documents: 16
+
+$ mongosh "mongodb://127.0.0.1:27017/giftdb" --quiet --eval "db.gifts.countDocuments()"
+Documents imported into gifts: 16

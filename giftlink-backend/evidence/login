@@ -1,5 +1,7 @@
-$ curl -X POST -H "Content-Type: application/json" -d '{"username":"giftlinkuser","password":"Passw0rd!"}' http://localhost:3060/api/auth/login
+$ curl -s -X POST -H "Content-Type: application/json" -d '{"username":"giftlinkuser","password":"Passw0rd!"}' http://localhost:3060/api/auth/login | python3 -m json.tool
 {
-  "success": true,
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX..."
+    "success": true,
+    "username": "giftlinkuser",
+    "email": "giftlink@example.com",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiN2MyZmViZDItNDliOC00YjI5LTkyMDUtYWU0M2E1ZDA0OTExIiwidXNlcm5hbWUiOiJnaWZ0bGlua3VzZXIiLCJpYXQiOjE3OTA4OTI0NDMsImV4cCI6MTc5MDg5OTY0M30.EU9QATKm_t1BzT2OA1TVcGmG_bxinAQG52A4Dy-cO9Q"
 }

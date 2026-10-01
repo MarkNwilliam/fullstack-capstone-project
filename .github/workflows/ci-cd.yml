@@ -7,6 +7,35 @@ on:
     branches: [main]
 
 jobs:
+  jshint:
+    name: Run JSHint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        working-directory: giftlink-backend
+        run: npm install --no-audit --no-fund
+
+      - name: Install JSHint
+        run: npm install -g jshint
+
+      - name: Run Linter
+        run: |
+          echo "Linting giftlink-backend"
+          cd giftlink-backend
+          jshint app.js models/db.js routes/giftRoutes.js routes/searchRoutes.js routes/authRoutes.js
+          echo "Linting sentiment"
+          cd ../sentiment
+          jshint index.js
+          echo "JSHint completed with no errors"
+
   lint-backend:
     name: Lint and syntax check the backend
     runs-on: ubuntu-latest

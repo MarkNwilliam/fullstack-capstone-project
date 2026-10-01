@@ -9,23 +9,30 @@
 
 ## User Story Template
 
-```markdown
+````markdown
 # Title
 
 # Description
 As a [type of user], I want to [goal] so that [benefit].
 
+# Details and Assumptions
+- [Document what you know, including the data, constraints, or background.]
+- [List any assumption the team is making about users or the system.]
+
 # Acceptance Criteria
-1. It is done when...
-2. It is done when...
-3. It is done when...
+```gherkin
+Given [some context]
+When [a certain action is taken]
+Then [the observed outcome should be]
+```
+- [Add one Given/When/Then block per testable behaviour.]
 
 # Out of Scope
 - [Thing that is explicitly not being built in this story]
 
 # Dependencies
 - [Story ID or external service this story relies on]
-```
+````
 
 ---
 
@@ -55,16 +62,36 @@ keeps a story from being a technical task.
 
 ---
 
+## Details and Assumptions
+
+Document everything the team knows about the story that is not obvious from the
+title: the data involved, business rules, non-functional constraints, and any
+assumptions about the user or the system. This section removes ambiguity before
+the story is estimated.
+
+- The gift data comes from the seeded `gifts` collection (`giftdb` database).
+- Users must be authenticated before posting an item.
+- Assumes the API is available at the configured backend URL.
+
 ## Acceptance Criteria
 
-Written as testable statements, using the format "It is done when...". Cover the
+Written in Gherkin syntax so each behaviour is testable: **Given** a context,
+**When** an action is taken, **Then** an observable outcome occurs. Cover the
 happy path, the validation and error paths, and any permissions involved.
 
-| # | Criterion |
-|---|-----------|
-| 1 | It is done when the user submits a valid value. |
-| 2 | It is done when a required field is left blank and the user sees a clear message. |
-| 3 | It is done when an unauthorised user attempts the action and is refused. |
+```gherkin
+Given [some context]
+When [a certain action is taken]
+Then [the observed outcome should be]
+
+Given a registered user is on the login page
+When they submit a valid email and password
+Then they are redirected to the landing page with a token stored
+
+Given a user is on the login page
+When they submit a blank email or password
+Then an inline validation message is shown
+```
 
 ---
 
@@ -84,14 +111,29 @@ As a registered user, I want to log in so that I can manage my profile and the
 items I have posted. The login form should post the email and password to the
 authentication API and store the returned JSON Web Token for later requests.
 
+# Details and Assumptions
+- The user already has an account created through the register page.
+- The API returns a JSON Web Token on a successful login.
+- The backend is reachable at the configured API base URL.
+
 # Acceptance Criteria
-1. It is done when a registered user submits a valid email and password and is
-   redirected to the landing page with a token stored.
-2. It is done when the email or password is blank and an inline message is shown.
-3. It is done when the credentials are incorrect and an error is shown without
-   revealing whether the email exists.
-4. It is done when the request is sent with a Content-Type header and the
-   Authorization header carries the bearer token on later requests.
+```gherkin
+Given a registered user is on the login page
+When they submit a valid email and password
+Then they are redirected to the landing page with a token stored
+
+Given a user is on the login page
+When the email or password field is left blank
+Then an inline message is shown
+
+Given a user is on the login page
+When the credentials are incorrect
+Then an error is shown without revealing whether the email exists
+
+Given a logged-in user makes a later request
+When the request is sent
+Then the Content-Type header is set and the Authorization header carries the bearer token
+```
 
 # Out of Scope
 - Password reset by email

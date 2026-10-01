@@ -1,5 +1,4 @@
 const express = require('express');
-const { ObjectId } = require('mongodb');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
@@ -38,6 +37,11 @@ router.post('/register', async (req, res, next) => {
       return res.status(409).json({ message: 'An account with that username already exists' });
     }
 
+    const existingEmail = await users.findOne({ email });
+    if (existingEmail) {
+      return res.status(409).json({ message: 'An account with that email already exists' });
+    }
+
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const userId = crypto.randomUUID();
@@ -55,7 +59,13 @@ router.post('/register', async (req, res, next) => {
     const result = await users.insertOne(doc);
     const token = jwt.sign({ user_id: userId, username }, secret, { expiresIn: '2h' });
 
-    res.status(201).json({ success: true, id: result.insertedId, token });
+    res.status(201).json({
+      success: true,
+      id: result.insertedId,
+      username,
+      email,
+      token,
+    });
   } catch (error) {
     next(error);
   }
@@ -88,7 +98,12 @@ router.post('/login', async (req, res, next) => {
 
     const token = jwt.sign({ user_id: user.user_id, username }, secret, { expiresIn: '2h' });
 
-    res.status(200).json({ success: true, token });
+    res.status(200).json({
+      success: true,
+      username: user.username,
+      email: user.email,
+      token,
+    });
   } catch (error) {
     next(error);
   }

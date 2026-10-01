@@ -1,6 +1,14 @@
-$ curl -X POST -H "Content-Type: application/json" -d '{"username":"giftlinkuser","password":"Passw0rd!","email":"giftlink@example.com","first_name":"Gift","last_name":"Link"}' http://localhost:3060/api/auth/register
+$ curl -s -X POST -H "Content-Type: application/json" -d '{"username":"giftlinkuser","password":"Passw0rd!","email":"giftlink@example.com","first_name":"Gift","last_name":"Link"}' http://localhost:3060/api/auth/register | python3 -m json.tool
 {
-  "success": true,
-  "id": "688346c2-6c99-41ef-9bca-cf4452c1fccb",
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX..."
+    "success": true,
+    "id": "7c2febd2-49b8-4b29-9205-ae43a5d04911",
+    "username": "giftlinkuser",
+    "email": "giftlink@example.com",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiN2MyZmViZDItNDliOC00YjI5LTkyMDUtYWU0M2E1ZDA0OTExIiwidXNlcm5hbWUiOiJnaWZ0bGlua3VzZXIiLCJpYXQiOjE3OTA4OTI0MzUsImV4cCI6MTc5MDg5OTYzNX0.5YTnUBIJez_3K7JxPc2UirsIGURFDK17u3DfXEh_NEU"
+}
+
+$ curl -s -o /dev/null -w "HTTP %{http_code}\n" -X POST -H "Content-Type: application/json" -d '{"username":"giftlinkuser2","password":"Passw0rd!","email":"giftlink@example.com","first_name":"Gift","last_name":"Link"}' http://localhost:3060/api/auth/register
+HTTP 409
+Duplicate email rejected: {
+    "message": "An account with that email already exists"
 }
