@@ -1,0 +1,39 @@
+# Render blueprint for the GiftLink capstone project.
+#
+# Two web services are defined: the Express API and the static React frontend.
+# Set MONGO_URL and JWT_SECRET as environment variables (see .env.sample).
+
+services:
+  - type: web
+    name: giftlink-backend
+    runtime: node
+    plan: free
+    rootDir: giftlink-backend
+    buildCommand: npm ci --omit=dev
+    startCommand: node app.js
+    healthCheckPath: /api/gifts
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: MONGO_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: "3060"
+
+  - type: web
+    name: giftlink-frontend
+    runtime: static
+    rootDir: giftlink-frontend
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./build
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: REACT_APP_BACKEND_URL
+        sync: false
+      - key: REACT_APP_FRONTEND_URL
+        sync: false
