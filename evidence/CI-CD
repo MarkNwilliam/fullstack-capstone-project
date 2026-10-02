@@ -1,29 +1,22 @@
-$ gh run view 36933183010 --repo MarkNwilliam/fullstack-capstone-project
+$ gh run view 36976848340 --repo MarkNwilliam/fullstack-capstone-project
 
-✓ main CI/CD Pipeline · 36933183010
-Triggered via push about 2 minutes ago
+
+✓ main CI/CD Pipeline · 36976848340
+Triggered via push about 7 minutes ago
 
 JOBS
-✓ Run JSHint in 27s (ID 110607206392)
-✓ Lint and syntax check the backend in 18s (ID 110607206639)
-✓ Build the React frontend in 43s (ID 110607206751)
-✓ Build the Docker images in 1m35s (ID 110607454456)
+✓ Run JSHint in 15s (ID 110742406348)
+✓ Build the React frontend in 38s (ID 110742406454)
+✓ Lint and syntax check the backend in 15s (ID 110742406536)
+✓ Build the Docker images in 2m12s (ID 110742587386)
 
-ANNOTATIONS
-! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
-Run JSHint: .github#2
+$ gh run view 36976848340 --repo MarkNwilliam/fullstack-capstone-project --job 110742406348
 
-- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
-Run JSHint: .github#1
 
-! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+✓ main CI/CD Pipeline · 36976848340
+Triggered via push about 7 minutes ago
 
-$ gh run view 36933183010 --repo MarkNwilliam/fullstack-capstone-project --job 110607206392
-
-✓ main CI/CD Pipeline · 36933183010
-Triggered via push about 2 minutes ago
-
-✓ Run JSHint in 27s (ID 110607206392)
+✓ Run JSHint in 15s (ID 110742406348)
   ✓ Set up job
   ✓ Checkout Repository
   ✓ Install Node.js
@@ -33,5 +26,3 @@ Triggered via push about 2 minutes ago
   ✓ Post Install Node.js
   ✓ Post Checkout Repository
   ✓ Complete job
-
-ANNOTATIONS
