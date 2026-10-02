@@ -3,5 +3,17 @@ $ curl -s -X POST -H "Content-Type: application/json" -d '{"username":"giftlinku
     "success": true,
     "username": "giftlinkuser",
     "email": "giftlink@example.com",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiN2MyZmViZDItNDliOC00YjI5LTkyMDUtYWU0M2E1ZDA0OTExIiwidXNlcm5hbWUiOiJnaWZ0bGlua3VzZXIiLCJpYXQiOjE3OTA4OTI0NDMsImV4cCI6MTc5MDg5OTY0M30.EU9QATKm_t1BzT2OA1TVcGmG_bxinAQG52A4Dy-cO9Q"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOGVlMjMwYTQtMTFhMS00MWY2LTk4MGItMTYwMzZkYzRmN2I3IiwidXNlcm5hbWUiOiJnaWZ0bGlua3VzZXIiLCJpYXQiOjE3OTA5MjQ3NzEsImV4cCI6MTc5MDkzMTk3MX0.v_p0TfyKipAW_TC9hkODg8rxH6a7BGfAFSF4GMUzw6s"
+}
+
+$ curl -s -o /dev/null -w "HTTP %{http_code}\n" -X POST -H "Content-Type: application/json" -d '{"username":"giftlinkuser","password":"WrongPass!"}' http://localhost:3060/api/auth/login
+HTTP 401
+Wrong password: {
+    "message": "Wrong password"
+}
+
+$ curl -s -o /dev/null -w "HTTP %{http_code}\n" -X POST -H "Content-Type: application/json" -d '{"username":"nobody","password":"Passw0rd!"}' http://localhost:3060/api/auth/login
+HTTP 401
+Unknown user: {
+    "message": "User not found"
 }

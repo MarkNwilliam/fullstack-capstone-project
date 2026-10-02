@@ -1,10 +1,10 @@
 $ curl -s -X POST -H "Content-Type: application/json" -d '{"username":"giftlinkuser","password":"Passw0rd!","email":"giftlink@example.com","first_name":"Gift","last_name":"Link"}' http://localhost:3060/api/auth/register | python3 -m json.tool
 {
     "success": true,
-    "id": "7c2febd2-49b8-4b29-9205-ae43a5d04911",
+    "id": "8ee230a4-11a1-41f6-980b-16036dc4f7b7",
     "username": "giftlinkuser",
     "email": "giftlink@example.com",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiN2MyZmViZDItNDliOC00YjI5LTkyMDUtYWU0M2E1ZDA0OTExIiwidXNlcm5hbWUiOiJnaWZ0bGlua3VzZXIiLCJpYXQiOjE3OTA4OTI0MzUsImV4cCI6MTc5MDg5OTYzNX0.5YTnUBIJez_3K7JxPc2UirsIGURFDK17u3DfXEh_NEU"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOGVlMjMwYTQtMTFhMS00MWY2LTk4MGItMTYwMzZkYzRmN2I3IiwidXNlcm5hbWUiOiJnaWZ0bGlua3VzZXIiLCJpYXQiOjE3OTA5MjQ3NjYsImV4cCI6MTc5MDkzMTk2Nn0.KDg3CTyPBDQNOQm_O4YnXYCvc4BdzNjMsxXBkKJInT4"
 }
 
 $ curl -s -o /dev/null -w "HTTP %{http_code}\n" -X POST -H "Content-Type: application/json" -d '{"username":"giftlinkuser2","password":"Passw0rd!","email":"giftlink@example.com","first_name":"Gift","last_name":"Link"}' http://localhost:3060/api/auth/register
